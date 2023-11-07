@@ -6,4 +6,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Common\" />
+    <Folder Include="Handlers\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Utils\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
 </Project>
