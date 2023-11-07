@@ -32,9 +32,19 @@ public class CategoriesController : ControllerBase
         => Ok(await _service.GetAllAsync(new PaginationParams(page, maxPageSize)));
 
     [HttpGet("{categoryId}")]
-    [AllowAnonymous]
     public async Task<IActionResult> GetByIdAsync(long categoryId)
         => Ok(await _service.GetByIdAsync(categoryId));
 
+    [HttpDelete("{categoryId}")]
+    public async Task<IActionResult> DeleteAsync(long categoryId)
+        =>Ok(await  _service.DeleteAsync(categoryId));
 
+    [HttpPut("{categoryId}")]
+    public async Task<IActionResult> UpdateAsync(long categoryId, [FromForm] CategoryUpdateDto dto)
+    {
+        var updateValidator = new CategoryUpdateValidator();
+        var validationResult = updateValidator.Validate(dto);
+        if (validationResult.IsValid) return Ok(await _service.UpdateAsync(categoryId, dto));
+        else return BadRequest(validationResult.Errors);
+    }
 }
