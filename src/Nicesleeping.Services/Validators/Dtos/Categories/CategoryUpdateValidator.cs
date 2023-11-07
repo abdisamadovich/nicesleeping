@@ -12,6 +12,7 @@ public class CategoryUpdateValidator : AbstractValidator<CategoryUpdateDto>
             .MaximumLength(20).WithMessage("Name must be less than 20 characters");
 
         RuleFor(dto => dto.Description).NotNull().NotEmpty().WithMessage("Description field is required!")
-            .MinimumLength(10).WithMessage("Description field is required!");
+            .MinimumLength(5).WithMessage("Description field is required!")
+            .MaximumLength(1000).WithMessage("Description must be less than 1000 characters");
     }
 }

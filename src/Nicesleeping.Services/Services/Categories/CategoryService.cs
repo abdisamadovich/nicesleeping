@@ -20,9 +20,9 @@ public class CategoryService : ICategoryService
         this._repository = categoryRepository;
         this._paginator = paginator;
     }
-    public Task<long> CountAsync()
+    public async Task<long> CountAsync()
     {
-        throw new NotImplementedException();
+        return await _repository.CountAsync();
     }
 
     public async Task<bool> CreateAsync(CategoryCreateDto dto)
