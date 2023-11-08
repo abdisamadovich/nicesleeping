@@ -5,13 +5,17 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0E0F8BC1-7AB0-4E44-98AD-A24CE0E80EA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nicesleeping.WebApi", "src\Nicesleeping.WebApi\Nicesleeping.WebApi.csproj", "{48DE0DAB-EDED-4DB4-A346-2A351C222991}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nicesleeping.WebApi", "src\Nicesleeping.WebApi\Nicesleeping.WebApi.csproj", "{48DE0DAB-EDED-4DB4-A346-2A351C222991}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nicesleeping.DataAccess", "src\Nicesleeping.DataAccess\Nicesleeping.DataAccess.csproj", "{1A2E299F-58D9-4ED6-BE76-7DFFFAA87B7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nicesleeping.DataAccess", "src\Nicesleeping.DataAccess\Nicesleeping.DataAccess.csproj", "{1A2E299F-58D9-4ED6-BE76-7DFFFAA87B7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nicesleeping.Domain", "src\Nicesleeping.Domain\Nicesleeping.Domain.csproj", "{9C73A321-7D33-42FE-AE3E-2F7C94771290}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nicesleeping.Domain", "src\Nicesleeping.Domain\Nicesleeping.Domain.csproj", "{9C73A321-7D33-42FE-AE3E-2F7C94771290}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nicesleeping.Services", "src\Nicesleeping.Services\Nicesleeping.Services.csproj", "{051128F6-70CA-48A2-9EBB-C72596942DF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nicesleeping.Services", "src\Nicesleeping.Services\Nicesleeping.Services.csproj", "{051128F6-70CA-48A2-9EBB-C72596942DF2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{433DACD4-D7CD-4A98-8898-5DB29E5A026C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nicesleeping.UnitTest", "test\Nicesleeping.UnitTest\Nicesleeping.UnitTest.csproj", "{112C812F-7546-460A-87CD-0900BB56C207}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +39,10 @@ Global
 		{051128F6-70CA-48A2-9EBB-C72596942DF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{051128F6-70CA-48A2-9EBB-C72596942DF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{051128F6-70CA-48A2-9EBB-C72596942DF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{112C812F-7546-460A-87CD-0900BB56C207}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{112C812F-7546-460A-87CD-0900BB56C207}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{112C812F-7546-460A-87CD-0900BB56C207}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{112C812F-7546-460A-87CD-0900BB56C207}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +52,7 @@ Global
 		{1A2E299F-58D9-4ED6-BE76-7DFFFAA87B7F} = {0E0F8BC1-7AB0-4E44-98AD-A24CE0E80EA2}
 		{9C73A321-7D33-42FE-AE3E-2F7C94771290} = {0E0F8BC1-7AB0-4E44-98AD-A24CE0E80EA2}
 		{051128F6-70CA-48A2-9EBB-C72596942DF2} = {0E0F8BC1-7AB0-4E44-98AD-A24CE0E80EA2}
+		{112C812F-7546-460A-87CD-0900BB56C207} = {433DACD4-D7CD-4A98-8898-5DB29E5A026C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E2CD89D8-67C7-4823-89F1-80440247F052}
