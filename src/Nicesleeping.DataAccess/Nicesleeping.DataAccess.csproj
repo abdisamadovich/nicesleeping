@@ -7,9 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Repositories\Characteristics\" />
     <Folder Include="Repositories\ProductImages\" />
-    <Folder Include="Repositories\Products\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
 
