@@ -34,8 +34,9 @@ public class ProductRepository : BaseRepository, IProductRepository
         {
             await _connection.OpenAsync();
 
-            string query = "INSERT INTO public.products(category_id, name, description, created_at, updated_at) VALUES " +
-                "(@CategoryId, @Name, @Description, @CreatedAt, @UpdatedAt);";
+            string query = "INSERT INTO public.products(category_id, name, description, price, textile, height, " +
+                "load_per_berth, rigidty, waranty, created_at, updated_at) VALUES (@CategoryId, @Name, @Description, " +
+                    "@Price, @Textile, @Height, @LoadPerBerth, @Rigidty, @Waranty, @CreatedAt, @UpdatedAt);";
 
             var result = await _connection.ExecuteAsync(query, entity);
 
@@ -114,6 +115,7 @@ public class ProductRepository : BaseRepository, IProductRepository
         }
     }
 
+    //Hamma columnlardan search qilaman
     public Task<(int ItemsCount, IList<Product>)> SearchAsync(string search, PaginationParams @params)
     {
         throw new NotImplementedException();
@@ -125,9 +127,9 @@ public class ProductRepository : BaseRepository, IProductRepository
         {
             await _connection.OpenAsync();
 
-            string query = $"UPDATE public.products " +
-                $"SET category_id=@CategoryId, name=@Name, description=@Description, created_at=@CreatedAt," +
-                $" updated_at=@UpdatedAt WHERE id={id};";
+            string query = $"UPDATE public.products SET category_id=@CategoryId, name=@Name, description=@Description, " +
+                $"price=@Price, textile=@Textile, height=@Height, load_per_berth=@LoadPerBerth, rigidty=@Rigidty, " +
+                    $"waranty=@Waranty, created_at=@CreatedAt, updated_at=@UpdatedAt WHERE id={id};";
 
             var result = await _connection.ExecuteAsync(query, entity);
 
