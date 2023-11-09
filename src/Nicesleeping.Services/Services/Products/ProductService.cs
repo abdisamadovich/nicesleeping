@@ -35,6 +35,11 @@ public class ProductService : IProductService
             CategoryId = dto.CategoryId,
             Name = dto.Name,
             Description = dto.Description,
+            Textile = dto.Textile,
+            Height = dto.Height,
+            LoadPerBerth = dto.LoadPerBerth,
+            Rigidty = dto.Rigidty,
+            Waranty = dto.Waranty,
             CreatedAt = TimeHelper.GetDateTime(),
             UpdatedAt = TimeHelper.GetDateTime()
         };
@@ -53,7 +58,6 @@ public class ProductService : IProductService
         return Result > 0;
     }
 
-    //GetAll ga productImage va Characteristics ni ham olib kelishim kerak
     public async Task<IList<Product>> GetAllAsync(PaginationParams @params)
     {
         var products = await _repository.GetAllAsync(@params);
@@ -63,7 +67,6 @@ public class ProductService : IProductService
         return products;
     }
 
-    //GetById ga productImage va Characteristics ni ham olib kelishim kerak
     public async Task<Product> GetByIdAsync(long productId)
     {
         var product = await _repository.GetByIdAsync(productId);
@@ -80,6 +83,11 @@ public class ProductService : IProductService
         product.CategoryId = dto.CategoryId;
         product.Name = dto.Name;
         product.Description = dto.Description;
+        product.Textile = dto.Textile;
+        product.Height = dto.Height;
+        product.LoadPerBerth = dto.LoadPerBerth;
+        product.Rigidty = dto.Rigidty;
+        product.Waranty = dto.Waranty;
         product.UpdatedAt = TimeHelper.GetDateTime();
 
         var Result = await _repository.UpdateAsync(productId, product);
