@@ -15,13 +15,14 @@ namespace Nicesleeping.Services.Services.Products;
 public class ProductService : IProductService
 {
     private readonly IProductRepository _repository;
-
+    private readonly ICategoryRepository _categoryRepository;
     private readonly IPaginator _paginator;
 
-    public ProductService(IProductRepository productRepository, IPaginator paginator)
+    public ProductService(IProductRepository productRepository, IPaginator paginator, ICategoryRepository categoryRepository)
     {
         this._repository = productRepository;
         this._paginator = paginator;
+        this._categoryRepository = categoryRepository;
     }
     public async Task<long> CountAsync()
     {
@@ -43,6 +44,9 @@ public class ProductService : IProductService
             CreatedAt = TimeHelper.GetDateTime(),
             UpdatedAt = TimeHelper.GetDateTime()
         };
+        var notfound = await _categoryRepository.GetByIdAsync(product.CategoryId);
+        if (notfound == null) throw new CategoryNotFoundException();
+
         var result = await _repository.CreateAsync(product);
 
         return result > 0;
