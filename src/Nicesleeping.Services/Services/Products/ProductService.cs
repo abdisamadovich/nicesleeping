@@ -83,7 +83,6 @@ public class ProductService : IProductService
     {
         var product = await _repository.GetByIdAsync(productId);
         if (product is null) throw new ProductNotFoundException();
-
         product.CategoryId = dto.CategoryId;
         product.Name = dto.Name;
         product.Description = dto.Description;
